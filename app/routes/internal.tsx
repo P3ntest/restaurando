@@ -1,3 +1,5 @@
+// Author: Josia Vahutinskij
+
 import type { Dish, Order, OrderItem } from "@prisma/client";
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";

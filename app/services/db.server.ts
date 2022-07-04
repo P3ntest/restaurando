@@ -1,3 +1,5 @@
+// Author: Julius van Voorden
+
 import { PrismaClient } from "@prisma/client";
 
 let db: PrismaClient;

@@ -1,3 +1,5 @@
+// Author: Julius van Voorden
+
 import type { Dish } from "@prisma/client";
 import type { ActionFunction, LoaderFunction } from "@remix-run/node";
 import { redirect } from "@remix-run/node";

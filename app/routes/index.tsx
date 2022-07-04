@@ -1,3 +1,5 @@
+// Author: Julius van Voorden
+
 import type { LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { db } from "~/services/db.server";

@@ -1,3 +1,5 @@
+// Author: Julius van Voorden
+
 import { Outlet } from "@remix-run/react";
 
 import styles from "~/styles/app.css";

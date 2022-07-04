@@ -1,3 +1,5 @@
+// Author: Julius van Voorden
+
 import type { Dish, Order, OrderItem } from "@prisma/client";
 import type { LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";

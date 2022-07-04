@@ -1,3 +1,5 @@
+// Author: Domenik Rusz
+
 import type { MetaFunction } from "@remix-run/node";
 import {
   Links,
