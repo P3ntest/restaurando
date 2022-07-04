@@ -18,7 +18,7 @@ model Table {
 model Dish {
   id    String @id @default(cuid())
   name  String
-  price Int
+  price Float
 
   OrderItem OrderItem[]
 }

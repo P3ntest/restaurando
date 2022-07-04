@@ -7,7 +7,8 @@
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
-    "start": "remix-serve build"
+    "start": "remix-serve build",
+    "seed": "node --require esbuild-register prisma/seed.ts"
   },
   "dependencies": {
     "@prisma/client": "^3.13.0",
@@ -22,6 +23,7 @@
     "@remix-run/eslint-config": "^1.4.3",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "esbuild-register": "^3.3.3",
     "eslint": "^8.11.0",
     "prisma": "^3.13.0",
     "typescript": "^4.5.5"
