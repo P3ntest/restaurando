@@ -8,7 +8,8 @@
     "build": "remix build",
     "dev": "remix dev",
     "start": "remix-serve build",
-    "seed": "node --require esbuild-register prisma/seed.ts"
+    "seed": "node --require esbuild-register prisma/seed.ts",
+    "lint": "eslint --fix app/**"
   },
   "dependencies": {
     "@prisma/client": "^3.13.0",
@@ -24,7 +25,7 @@
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "esbuild-register": "^3.3.3",
-    "eslint": "^8.11.0",
+    "eslint": "^8.19.0",
     "prisma": "^3.13.0",
     "typescript": "^4.5.5"
   },

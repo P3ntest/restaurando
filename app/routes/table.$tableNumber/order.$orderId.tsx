@@ -1,5 +1,5 @@
-import { Dish, Order, OrderItem } from "@prisma/client";
-import { LoaderFunction } from "@remix-run/node";
+import type { Dish, Order, OrderItem } from "@prisma/client";
+import type { LoaderFunction } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { db } from "~/services/db.server";
 
@@ -21,7 +21,7 @@ export default function OrderConfirmed() {
       <h2>Items:</h2>
       <ul>
         {order.items.map((item) => {
-          return <li>{item.dish.name}</li>;
+          return <li key={item.id}>{item.dish.name}</li>;
         })}
       </ul>
       Total: {order.items.reduce((total, item) => total + item.dish.price, 0)}€

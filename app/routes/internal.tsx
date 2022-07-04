@@ -1,6 +1,6 @@
-import { Dish, Order, OrderItem } from "@prisma/client";
-import { ActionFunction, LoaderFunction } from "@remix-run/node";
-import { Form, Outlet, useLoaderData } from "@remix-run/react";
+import type { Dish, Order, OrderItem } from "@prisma/client";
+import type { ActionFunction, LoaderFunction } from "@remix-run/node";
+import { Form, useLoaderData } from "@remix-run/react";
 import { db } from "~/services/db.server";
 
 interface LoaderData {
@@ -20,11 +20,11 @@ export default function Internal() {
       <ul>
         {orders.map((order) => {
           return (
-            <li>
+            <li key={order.id}>
               <h3>Order #{order.id}</h3>
               <ul>
                 {order.items.map((item) => {
-                  return <li>{item.dish.name}</li>;
+                  return <li key={item.id}>{item.dish.name}</li>;
                 })}
               </ul>
               Total:{" "}
@@ -75,6 +75,5 @@ export const action: ActionFunction = async ({ request }) => {
         },
       });
       return {};
-      break;
   }
 };
