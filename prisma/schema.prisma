@@ -26,8 +26,8 @@ model Dish {
 model OrderItem {
   id String @id @default(cuid())
 
-  order Order @relation(fields: [orderId], references: [id])
-  dish  Dish  @relation(fields: [dishId], references: [id])
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  dish  Dish  @relation(fields: [dishId], references: [id], onDelete: Cascade)
 
   note String @default("")
 
@@ -37,7 +37,7 @@ model OrderItem {
 
 model Order {
   id          Int         @id @unique @default(autoincrement())
-  table       Table       @relation(fields: [tableNumber], references: [tableNumber])
+  table       Table       @relation(fields: [tableNumber], references: [tableNumber], onDelete: Cascade)
   items       OrderItem[]
   tableNumber Int
   completed   Boolean     @default(false)

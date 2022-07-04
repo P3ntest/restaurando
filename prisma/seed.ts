@@ -4,14 +4,15 @@ const db = new PrismaClient();
 async function seed() {
   await db.table.deleteMany();
   await db.dish.deleteMany();
+  await db.order.deleteMany();
 
   await db.table.createMany({
     data: [
-      ...Array(10)
+      ...Array(69)
         .fill({})
         .map((_, i) => {
           return {
-            tableNumber: i,
+            tableNumber: i + 1,
           };
         }),
     ],
@@ -20,51 +21,51 @@ async function seed() {
   await db.dish.createMany({
     data: [
       {
-        name: "Pizza",
+        name: "🍕 Pizza",
         price: 9.45,
       },
       {
-        name: "Pasta Bolognese",
+        name: "🍝 Pasta Bolognese",
         price: 8.5,
       },
       {
-        name: "Pasta Carbonara",
-        price: 8.5,
-      },
-      {
-        name: "Lasagna",
+        name: "🥪 Sandwich",
         price: 12.5,
       },
       {
-        name: "Fried Shrimps",
+        name: "🦐 Fried Shrimps",
         price: 7.5,
       },
       {
-        name: "Classic Burger",
+        name: "🍔 Classic Burger",
         price: 5,
       },
       {
-        name: "Bag of chips",
+        name: "🍟 Bag of chips",
         price: 4.5,
       },
       {
-        name: "Coca Cola",
+        name: "🥤 Coca Cola",
         price: 1.5,
       },
       {
-        name: "Coca Cola Zero",
+        name: "🥤 Coca Cola Zero",
         price: 1.5,
       },
       {
-        name: "Fanta",
+        name: "🥤 Fanta",
         price: 1.5,
       },
       {
-        name: "Sprite",
+        name: "🥤 Sprite",
         price: 1.5,
       },
       {
-        name: "Sparkling Water",
+        name: "🧋 Bubble Tea",
+        price: 4,
+      },
+      {
+        name: "💧 Sparkling Water",
         price: 1.5,
       },
     ],

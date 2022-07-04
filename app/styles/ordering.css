@@ -1,0 +1,76 @@
+.double-colums {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.card {
+  background-color: #ffffff66;
+  padding: 20px;
+  border: 1px solid;
+}
+
+.dish {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.dish button {
+}
+
+.dish h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.dish p {
+  font-size: 1em;
+  color: #666666;
+  margin: 2px 0;
+}
+
+.dish p::after {
+  content: "€";
+}
+
+.cart {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+.menu {
+  min-width: 500px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.table {
+  background-color: #9a541755;
+  padding: 5px 11px;
+  border-radius: 50%;
+  font-weight: bolder;
+  font-size: xx-large;
+  margin: 5px;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.no-link {
+  text-decoration: none !important;
+}
+
+.table-grid {
+  /* display: flex; */
+  gap: 5px;
+  max-width: 50vw;
+}

@@ -9,23 +9,31 @@ interface LoaderData {
       dish: Dish;
     })[];
   };
+  tableNumber: number;
 }
 
 export default function OrderConfirmed() {
-  const { order } = useLoaderData<LoaderData>();
+  const { order, tableNumber } = useLoaderData<LoaderData>();
 
   return (
-    <div>
-      <h1>Order Confirmed</h1>
-      <p>Your order has been placed</p>
-      <h2>Items:</h2>
-      <ul>
-        {order.items.map((item) => {
-          return <li key={item.id}>{item.dish.name}</li>;
-        })}
-      </ul>
-      Total: {order.items.reduce((total, item) => total + item.dish.price, 0)}€
-      <Link to={`/`}>Place another order</Link>
+    <div className="card">
+      <h1>✔️ Order Confirmed</h1>
+      <p>Your order has been placed. Your food should arrive shortly.</p>
+      <div>
+        <h2>Order Recap:</h2>
+        <ul>
+          {order.items.map((item) => {
+            return <li key={item.id}>{item.dish.name}</li>;
+          })}
+        </ul>
+        Total: {order.items.reduce((total, item) => total + item.dish.price, 0)}
+        €
+      </div>
+      <br />
+      <p>
+        Want to order more?{" "}
+        <Link to={`/table/${tableNumber}`}>Place another order</Link>
+      </p>
     </div>
   );
 }
@@ -51,5 +59,6 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   return {
     order,
+    tableNumber: Number(params.tableNumber),
   } as LoaderData;
 };

@@ -22,6 +22,7 @@ export default function Internal() {
           return (
             <li key={order.id}>
               <h3>Order #{order.id}</h3>
+              <p>Order for table #{order.tableNumber}</p>
               <ul>
                 {order.items.map((item) => {
                   return <li key={item.id}>{item.dish.name}</li>;
@@ -31,7 +32,7 @@ export default function Internal() {
               {order.items.reduce((total, item) => total + item.dish.price, 0)}€
               <Form method="delete">
                 <input type="hidden" name="orderId" value={order.id} />
-                <input type="submit" value="Complete" />
+                <input type="submit" value="Completed" />
               </Form>
             </li>
           );
